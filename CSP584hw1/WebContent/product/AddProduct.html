@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="./productCSS/addProduct.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>商品添加页面</h3>
+	<hr/>
+	<form name = "form1" method = "POST" action="/CSP584hw1/ProductUploadUtils" enctype="multipart/form-data">
+		<table align="center" border="1" width="800px">
+		
+		
+			<tr>
+				<td>Product Name</td>
+				<td><input type = "text" name = "productName"/></td>
+			<tr/>
+			<tr>
+				<td>Additional Options</td>
+				<td><label>
+				<input type = "checkbox" name = "additionalOption" value="Special Discount">Special Discount
+				<input type = "checkbox" name = "additionalOption" value="Manufacturer Rebates">Manufacturer Rebates
+				<input type = "checkbox" name = "additionalOption" value="Retailer Warranty">Retailer Warranty
+
+				</label></td>	
+			<tr/>
+			<tr>
+				<td>Product Image</td>
+				<td><input type = "file" id = "photo" name = "imageUrl"></td>
+			<tr/>
+			<tr>
+				<td>Product Price</td>
+				<td><input type = "text" name = "productPrice"/></td>
+			<tr/>
+			<tr>
+				<td>Product Information</td>
+				<td><input type = "text" name = "productInfo"/></td>
+			<tr/>
+			<tr>
+				<td>Product Category</td>
+				<!-- <select id="Category" name="ProductCategory">
+    				<option value="WearableTechnology">Wearable Technology</option>
+					<option value="SmartWatches">Smart Watches</option>
+					<option value="Headphones">Head phones</option>
+					<option value="VirtualReality">Virtual Reality</option>
+					<option value="PetTracker">Pet Tracker</option>
+					<option value="phones">phones</option>
+					<option value="Laptops">Laptops</option>
+					<option value="VoiceAssistant/SmartSpeaker">VoiceAssistant/SmartSpeaker</option>
+				</select> -->
+				<td><input type = "radio" name = "productCategory" value = "WearableTechnology">WearableTechnology
+					<input type = "radio" name = "productCategory" value = "phones">phones
+					<input type = "radio" name = "productCategory" value = "Laptops">Laptops
+					<input type = "radio" name = "productCategory" value = "VoiceAssistant">VoiceAssistant/SmartSpeaker
+				</td>
+			<tr/>
+			<tr>
+				<td>Product Stock</td>
+				<td><input type = "text" name = "productStock"/></td>
+			<tr/>
+			
+			<tr>
+				<td colspan="2">
+					<div class="btn-red">
+						<input type="submit" value="提交" id="sub-btn">
+					</div>
+					<div class="btn-red">
+						<input type="reset" value="重制" id="reset-btn">
+					</div>
+					
+			</tr>
+				
+			
+		</table>
+		
+	</form>
+</body>
+</html>
