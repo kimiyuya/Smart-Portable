@@ -63,7 +63,7 @@ public class Account extends HttpServlet {
 			String TOMCAT_HOME = System.getProperty("catalina.home");
 			try
 				{
-					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"//wtpwebapps//CSP584hw1//PaymentDetails.txt"));
 					ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 					orderPayments = (HashMap)objectInputStream.readObject();
 				}
@@ -74,9 +74,11 @@ public class Account extends HttpServlet {
 			int size=0;
 			for(Map.Entry<Integer, ArrayList<OrderPayment>> entry : orderPayments.entrySet())
 				{
-					for(OrderPayment od:entry.getValue())	
-					if(od.getUserName().equals(user.getUserName()))
-					size= size+1;
+					for(OrderPayment od:entry.getValue()) {
+						//if(od.getUserName().equals(user.getUserName()))
+						size= size+1;
+						
+					}
 				}
 				
 			if(size>0)
@@ -84,13 +86,13 @@ public class Account extends HttpServlet {
 					
 					pw.print("<tr><td></td>");
 					pw.print("<td>OrderId:</td>");
-					pw.print("<td>UserName:</td>");
+					pw.print("<td>RecipientNamne:</td>");
 					pw.print("<td>productOrdered:</td>");
 					pw.print("<td>productPrice:</td></tr>");
 					for(Map.Entry<Integer, ArrayList<OrderPayment>> entry : orderPayments.entrySet())
 					{
 						for(OrderPayment oi:entry.getValue())	
-						if(oi.getUserName().equals(user.getUserName())) 
+						//if(oi.getUserName().equals(user.getUserName())) 
 						{
 							pw.print("<form method='get' action='ViewOrder'>");
 							pw.print("<tr>");			

@@ -99,6 +99,9 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 //				for(OrderPayment od:orderPayments.get(orderId))	
 //				if(od.getUserName().equals(username))
 //				size= orderPayments.get(orderId).size();
+					
+					//cuz recepient may not be users themselves, can be other people ,so we 
+					//can not verify the order by name.
 					size = 1;
 				}
 				// display the orders if there exist order with order id

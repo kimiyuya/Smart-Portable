@@ -20,6 +20,7 @@ import java.util.Random;
 @WebServlet("/Payment")
 
 public class Payment extends HttpServlet {
+		static int orderId = 10000;
 
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -47,8 +48,8 @@ public class Payment extends HttpServlet {
 		{
 			//Random rand = new Random();
 			//int orderId = rand.nextInt(100);
-			int orderId=utility.getOrderPaymentSize()+1;
-
+			//int orderId=utility.getOrderPaymentSize()+1;
+			orderId ++;
 			//iterate through each order
 
 			for (OrderItem oi : utility.getCustomerOrders())
