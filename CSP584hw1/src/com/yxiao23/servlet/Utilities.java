@@ -181,9 +181,17 @@ public class Utilities extends HttpServlet{
 	}
 	
 	/*  getCustomerOrders Function deletes  the Orders for the user*/
-	public void deleteCustomerOrders(){
-		//ArrayList<OrderItem> oi = getCustomerOrders();
-		OrderDB.orders.remove(username());
+	public void deleteCustomerOrders(String itemName){
+		ArrayList<OrderItem> orderItems = OrderDB.orders.get(username());
+		  int index = 0;
+		  //traverse orderItem to find the index of item to be removed
+		  for(OrderItem oi : orderItems) {
+		   if(oi.getProductName().equals(itemName)) {
+		    break;
+		   } else index++;
+		  }
+		  orderItems.remove(index);
+
 	}
 
 	/*  getOrdersPaymentSize Function gets  the size of OrderPayment */

@@ -60,7 +60,7 @@ public class Login extends HttpServlet {
 				session.setAttribute("username", user.getUserName());
 				session.setAttribute("usertype", user.getUserType());
 				if (usertype.equals("customer")) {
-					System.out.println(user);
+				
 					response.sendRedirect("Home");
 				}
 				if (usertype.equals("storemanager")) {

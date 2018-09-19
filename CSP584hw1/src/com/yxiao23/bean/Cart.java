@@ -64,59 +64,65 @@ public class Cart extends HttpServlet {
 		pw.print("</h2><div class='entry'>");
 		
 		
-		pw.print("<form name ='Cart' action='CheckOut' method='post'></tr>");
+		pw.print("<form name ='Cart' action='RemoveCart' method='post'></tr>");
 		if(utility.CartCount()>0)
 		{
 			pw.print("<table  class='gridtable'>");
 			int i = 1;
 			double total = 0;
+			// 遍历 the ArrayList of orders
 			for (OrderItem oi : utility.getCustomerOrders()) 
 			{
 		
 				pw.print("<tr>");
-				pw.print("<td><input type='radio' name='orderName' value='"+oi.getProductName()+"'></td>");	
+				pw.print("<td><input type='checkbox' name='checkbox' value='"+oi.getProductName()+"'></td>");	
+				//pw.print("<input type='checkbox' name='orderPrice' value='"+oi.getProductPrice()+"'>");
+				
+				
 				pw.print("<td>"+i+".</td><td>"+oi.getProductName()+"</td><td>: "+oi.getProductPrice()+"</td>");
+				//pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy' /></td>");
 				pw.print("<input type='hidden' name='orderName' value='"+oi.getProductName()+"'>");
 				pw.print("<input type='hidden' name='orderPrice' value='"+oi.getProductPrice()+"'>");
 				pw.print("</tr>");
 				total = total +oi.getProductPrice();
 				i++;
 			}
+			pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy' /></td>");
+			pw.print("</table></form >");
+			
+			pw.print("<form action='CheckOut' method='post'>");		
 			pw.print("<input type='hidden' name='orderTotal' value='"+total+"'>");	
 			pw.print("<tr><th></th><th>Total</th><th>"+total+"</th>");
-//			pw.print("<tr><td></td><td></td><td><input type='submit' name='Remove' value='Remove' class='btnbuy' /></td>");
 			pw.print("<tr><td></td><td></td><td><input type='submit' name='CheckOut' value='CheckOut' class='btnbuy' /></td>");
-			pw.print("</table></form>");
+			pw.print("</form>");
 			
-			pw.print("<form name ='Cart1' action='Cart' method='get'></tr>");
-			pw.print("<tr><td><input type='submit' name='Remove' value='Remove' class='btnbuy'></td></tr>");
+//			pw.print("<form name ='Cart1' action='Cart' method='get'></tr>");
+//			pw.print("<tr><td><input type='submit' name='Remove' value='Remove' class='btnbuy'></td></tr>");
 			
 			
 			/* This code is calling Carousel.java code to implement carousel feature*/
 			pw.print(carousel.carouselfeature(utility));
 
-			if (request.getParameter("Remove").equals("Remove")) {
-//				if(request.getParameter("orderName") != null) {
-					utility.deleteCustomerOrders();
-					//response.sendRedirect("Cart");
-//					
-//				}else
-//				{
-//					pw.print("<h4 style='color:red'>Please select any product</h4>");
-//				}
-			}
+//			if (request.getParameter("Remove").equals("Remove")) {
+////				if(request.getParameter("orderName") != null) {
+//					//String name = request.getContextPath()
+//					String type = request.getParameter("type");
+//					//utility.deleteCustomerOrders(name, type);
+//					//response.sendRedirect("Cart");
+////					
+////				}else
+////				{
+////					pw.print("<h4 style='color:red'>Please select any product</h4>");
+////				}
+//			}
 			
-			ArrayList<OrderItem> order = OrderDB.orders.get("Yulinxiao");
-			for (int j = 0;j<order.size();j++) {
-				System.out.println(order);
-				
-			}
 		}
 		else
 		{
 			pw.print("<h4 style='color:red'>Your Cart is empty</h4>");
 		}
-		pw.print("</form></div></div></div>");		
+		pw.print("</div></div></div>");	
+		
 		utility.printHtml("Footer.html");
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
