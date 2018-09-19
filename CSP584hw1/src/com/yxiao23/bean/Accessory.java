@@ -1,8 +1,11 @@
 package com.yxiao23.bean;
 
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 
+@WebServlet("/Accessory")
 
-public class Accessory {
+public class Accessory extends HttpServlet{
 	private String id;
 	private String name;
 	private double price;

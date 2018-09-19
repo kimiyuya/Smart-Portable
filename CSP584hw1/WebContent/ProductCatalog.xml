@@ -988,10 +988,10 @@
      </accessory>
      
      <accessory id="Soft_Silicone_Watch_Strap">
-        <name>Soft Silicone Watch Strap</name>
+        <name>Toobur Soft Silicone Watch Strap</name>
         <price>19.99</price>
         <image>Soft_SiliconeStrap.jpg</image>
-        <manufacturer>Notocity</manufacturer>
+        <manufacturer>Toobur</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
      </accessory>
@@ -1012,10 +1012,10 @@
         <discount>20.0</discount>
      </accessory>
      <accessory id="VeeR_3D_Headsets">
-        <name>VeeR 3D Virtual Reality Headsets</name>
+        <name>Samsung 3D Virtual Reality Headsets</name>
         <price>40.98</price>
         <image>SL1000_.jpg</image>
-        <manufacturer>VeeR</manufacturer>
+        <manufacturer>Samsung</manufacturer>
         <condition>New</condition>
         <discount>30.0</discount>
      </accessory>
@@ -1044,10 +1044,10 @@
         <discount>40.0</discount>
      </accessory>
      <accessory id="SIMCard">
-        <name>$50 GSM SIM Card for GPS Tracking Devices</name>
+        <name>$50 Gibi SIM Card for GPS Tracking Devices</name>
         <price>50.00</price>
         <image>simcard.jpg</image>
-        <manufacturer>GSM</manufacturer>
+        <manufacturer>Gibi</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
      </accessory>
@@ -1079,7 +1079,7 @@
         <name>Pearl mCover Hard Shell Case</name>
         <price>11.99</price>
         <image>hardShellcase.jpg</image>
-        <manufacturer>Pearl</manufacturer>
+        <manufacturer>Amazon</manufacturer>
         <condition>New</condition>
         <discount>20.0</discount>
      </accessory>
@@ -1087,7 +1087,7 @@
         <name>All-New Sonos Beam</name>
         <price>48.00</price>
         <image>sonosBeam.jpg</image>
-        <manufacturer>Sonos</manufacturer>
+        <manufacturer>Amazon</manufacturer>
         <condition>New</condition>
         <discount>20.0</discount>
      </accessory>
@@ -1095,7 +1095,7 @@
         <name>Sonos SUB Wireless Subwoofer</name>
         <price>19.99</price>
         <image>subwoofer.jpg</image>
-        <manufacturer>Sonos</manufacturer>
+        <manufacturer>Amazon</manufacturer>
         <condition>New</condition>
         <discount>20.0</discount>
      </accessory>

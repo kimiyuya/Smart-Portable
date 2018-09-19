@@ -64,7 +64,7 @@ public class Login extends HttpServlet {
 					response.sendRedirect("Home");
 				}
 				if (usertype.equals("storemanager")) {
-					response.sendRedirect("/CSP584hw1/product/ProductManagement.html");
+					response.sendRedirect("StoreManagement");
 				}
 				if (usertype.equals("salesman")) {
 					response.sendRedirect("Home");

@@ -141,12 +141,16 @@ public class FitnessWatchList extends HttpServlet {
 				pw.print("<h3>"+fitnesswatch.getName()+"</h3>");
 				pw.print("<strong>"+ "$" + fitnesswatch.getPrice() + "</strong><ul>");
 				pw.print("<li id='item'><img src='img/"+fitnesswatch.getImage()+"' alt='' /></li>");
+				
 				pw.print("<li><form method='post' action='Cart'>" +
 						"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
 						"<input type='hidden' name='type' value='fitnesswatches'>"+
 						"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
 						"<input type='hidden' name='access' value=''>"+
 						"<input type='submit' class='btnbuy' value='Buy Now'></form></li>");
+				
+				
+				
 				pw.print("<li><form method='post' action='WriteReview'>"+"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
 						"<input type='hidden' name='type' value='fitnesswatches'>"+
 						"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
@@ -157,6 +161,8 @@ public class FitnessWatchList extends HttpServlet {
 						"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
 						"<input type='hidden' name='access' value=''>"+
 						"<input type='submit' value='ViewReview' class='btnreview'></form></li>");
+				
+				
 				pw.print("</ul></div></td>");
 				if(i%3==0 || i == size) pw.print("</tr>");
 				i++;

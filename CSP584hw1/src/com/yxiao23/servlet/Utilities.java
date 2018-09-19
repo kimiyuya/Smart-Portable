@@ -146,6 +146,7 @@ public class Utilities extends HttpServlet{
 		return null;
 	}
 	
+	
 	/*  usertype Function returns the usertype from the session variable.*/
 	public String usertype(){
 		if (session.getAttribute("usertype")!=null)
@@ -178,6 +179,12 @@ public class Utilities extends HttpServlet{
 			order= OrderDB.orders.get(username());
 		return order;
 	}
+	
+	/*  getCustomerOrders Function deletes  the Orders for the user*/
+	public void deleteCustomerOrders(){
+		//ArrayList<OrderItem> oi = getCustomerOrders();
+		OrderDB.orders.remove(username());
+	}
 
 	/*  getOrdersPaymentSize Function gets  the size of OrderPayment */
 	public int getOrderPaymentSize(){
@@ -185,7 +192,7 @@ public class Utilities extends HttpServlet{
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 			try
 			{
-				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"//wtpwebapps//CSP584hw1//PaymentDetails.txt"));
 				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 				orderPayments = (HashMap)objectInputStream.readObject();
 			}

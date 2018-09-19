@@ -149,6 +149,7 @@ public class SaxParserDataStore extends DefaultHandler {
         	pettracker.setId(attributes.getValue("id"));
         	
         }
+
         //
         if (elementName.equals("accessory") 
         		&& !currentElement.equals("fitnesswatch")
@@ -160,9 +161,10 @@ public class SaxParserDataStore extends DefaultHandler {
         		&& !currentElement.equals("laptop")
         		&& !currentElement.equals("smartspeaker")
         		){
-        	currentElement = "accessory";
+        	currentElement = "Accessory";
         	accessory = new Accessory();
         	accessory.setId(attributes.getValue("id"));
+        	System.out.println("lalalalalalal");
         	
         }
 
@@ -211,8 +213,8 @@ public class SaxParserDataStore extends DefaultHandler {
         
         
         //to Encapsulate accessory Object into accessories(HashMap)
-        if (element.equals("accessory") && currentElement.equals("accessory")) {
-        	accessories.put(accessory.getId(),accessory);       
+        if (element.equals("accessory") && currentElement.equals("Accessory")) {
+        	accessories.put(accessory.getId(),accessory); 
 			return; 
         }
         //to get accessory product name of FitnessWatches
