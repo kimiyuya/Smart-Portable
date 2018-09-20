@@ -34,7 +34,7 @@ public class Cart extends HttpServlet {
 		String type = request.getParameter("type");
 		String maker = request.getParameter("maker");
 		String access = request.getParameter("access");
-		System.out.print("name" + name + "type" + type + "maker" + maker + "accesee" + access);
+		System.out.print("name" + name + "type" + type + "maker" + maker + "access" + access);
 
 		/* StoreProduct Function stores the Purchased product in Orders HashMap.*/	
 		
@@ -75,46 +75,28 @@ public class Cart extends HttpServlet {
 			{
 		
 				pw.print("<tr>");
-				pw.print("<td><input type='checkbox' name='checkbox' value='"+oi.getProductName()+"'></td>");	
-				//pw.print("<input type='checkbox' name='orderPrice' value='"+oi.getProductPrice()+"'>");
-				
-				
+				pw.print("<td><input type='checkbox' name='checkbox' value='"+oi.getProductName()+"'></td>");				
 				pw.print("<td>"+i+".</td><td>"+oi.getProductName()+"</td><td>: "+oi.getProductPrice()+"</td>");
-				//pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy' /></td>");
 				pw.print("<input type='hidden' name='orderName' value='"+oi.getProductName()+"'>");
 				pw.print("<input type='hidden' name='orderPrice' value='"+oi.getProductPrice()+"'>");
 				pw.print("</tr>");
 				total = total +oi.getProductPrice();
 				i++;
 			}
-			pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy' /></td>");
+			pw.print("<input type='hidden' name='orderTotal' value='"+total+"'>");	
+			pw.print("<tr><th></th><th>Total</th><th>"+total+"</th>");
+			
+			pw.print("<input type='submit' name='Remove' value='Remove' class='btnbuy' />");
 			pw.print("</table></form >");
 			
 			pw.print("<form action='CheckOut' method='post'>");		
-			pw.print("<input type='hidden' name='orderTotal' value='"+total+"'>");	
-			pw.print("<tr><th></th><th>Total</th><th>"+total+"</th>");
+			
 			pw.print("<tr><td></td><td></td><td><input type='submit' name='CheckOut' value='CheckOut' class='btnbuy' /></td>");
 			pw.print("</form>");
-			
-//			pw.print("<form name ='Cart1' action='Cart' method='get'></tr>");
-//			pw.print("<tr><td><input type='submit' name='Remove' value='Remove' class='btnbuy'></td></tr>");
-			
+				
 			
 			/* This code is calling Carousel.java code to implement carousel feature*/
 			pw.print(carousel.carouselfeature(utility));
-
-//			if (request.getParameter("Remove").equals("Remove")) {
-////				if(request.getParameter("orderName") != null) {
-//					//String name = request.getContextPath()
-//					String type = request.getParameter("type");
-//					//utility.deleteCustomerOrders(name, type);
-//					//response.sendRedirect("Cart");
-////					
-////				}else
-////				{
-////					pw.print("<h4 style='color:red'>Please select any product</h4>");
-////				}
-//			}
 			
 		}
 		else

@@ -310,7 +310,6 @@ public class SaxParserDataStore extends DefaultHandler {
       	
         if (element.equalsIgnoreCase("image")) {
 		    if(currentElement.equals("fitnesswatch")) {
-		    	System.out.println(elementValueRead);
 		    	fitnesswatch.setImage(elementValueRead);
 		    	}
         	if(currentElement.equals("smartwatch"))

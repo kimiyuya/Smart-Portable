@@ -68,7 +68,8 @@ public class Carousel{
 				sb.append("<div class='carousel-inner'>");
 						
 				Phones phone1 = hm.get(oi.getProductName());
-				System.out.print(oi.getProductName());
+				System.out.print(oi.getProductName()+"肖毓麟");
+				System.out.print(phone1.getName().toString()+"阎雪");
 				int k = 0; int size= hm.size();
 			
 				for(Map.Entry<String, String> acc:phone1.getAccessories().entrySet())

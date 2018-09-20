@@ -286,6 +286,38 @@ public class Utilities extends HttpServlet{
 		}
 		
 	}
+	//for storemanager to remove Product
+	public void removeProduct(String productId) {
+		if(SaxParserDataStore.fitnesswatchMap.containsKey(productId)) {
+			SaxParserDataStore.fitnesswatchMap.remove(productId);
+		}
+		if(SaxParserDataStore.headphoneMap.containsKey(productId)) {
+			SaxParserDataStore.headphoneMap.remove(productId);
+		}
+		if(SaxParserDataStore.laptopsMap.containsKey(productId)) {
+			SaxParserDataStore.laptopsMap.remove(productId);
+		}
+		if(SaxParserDataStore.phonesMap.containsKey(productId)) {
+			SaxParserDataStore.phonesMap.remove(productId);
+		}
+		if(SaxParserDataStore.pTMap.containsKey(productId)) {
+			SaxParserDataStore.pTMap.remove(productId);
+		}
+		if(SaxParserDataStore.smartspeakersMap.containsKey(productId)) {
+			SaxParserDataStore.smartspeakersMap.remove(productId);
+		}
+		if(SaxParserDataStore.smartwatchMap.containsKey(productId)) {
+			SaxParserDataStore.smartwatchMap.remove(productId);
+		}
+		if(SaxParserDataStore.vrMap.containsKey(productId)) {
+			SaxParserDataStore.vrMap.remove(productId);
+		}
+	}
+	//for storemanager to update product
+	public void updateProduct(String productId ) {
+		
+	}
+	
 	// store the payment details for orders
 	public void storePayment(
 			int orderId,
