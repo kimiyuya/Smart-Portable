@@ -52,7 +52,8 @@ public class StoreManagement extends HttpServlet {
 		pw.print("<a style='font-size: 24px;'>Order</a>");
 		pw.print("</h2><div class='entry'>");
 		
-		
+//		pw.print("<form name ='AddProduct' action='AddProduct' method='post'>");
+//		pw.print("<td><input type='submit' name='AddProduct' value='Add Product' class='btnbuy'></td>");
 		
 		pw.print("<table  class='gridtable'>");
 		pw.print("<tr>");
@@ -68,10 +69,10 @@ public class StoreManagement extends HttpServlet {
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+fw.getKey()+"'>");		
-			pw.print("<td>"+i+".</td><td>"+fw.getValue().getName()+"></td>");	
+			pw.print("<td>"+i+".</td><td>"+fw.getValue().getName()+"</td>");	
 			pw.print("<td>"+fw.getValue().getPrice()+"</td>");	
-			pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy'></td>");
-			pw.print("<td><input type='submit' name='Update' value='Update' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Remove' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Update' class='btnbuy'></td>");
 			pw.print("</tr>");
 			i++;
 			pw.print("</form>");
@@ -84,13 +85,15 @@ public class StoreManagement extends HttpServlet {
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+hp.getKey()+"'>");		
-			pw.print("<td>"+i+".</td><td>"+hp.getValue().getName()+"></td>");	
+			pw.print("<td>"+i+".</td><td>"+hp.getValue().getName()+"</td>");	
 			pw.print("<td>"+hp.getValue().getPrice()+"</td>");	
-			pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy'></td>");
-			pw.print("<td><input type='submit' name='Update' value='Update' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Remove' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Update' class='btnbuy'></td>");
 			pw.print("</tr>");
 			i++;
 			pw.print("</form>");
+			
+			
 		}
 		
 		for (Entry<String, Laptops> lt : ltmap.entrySet()) 
@@ -99,10 +102,10 @@ public class StoreManagement extends HttpServlet {
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+lt.getKey()+"'>");		
-			pw.print("<td>"+i+".</td><td>"+lt.getValue().getName()+"></td>");	
+			pw.print("<td>"+i+".</td><td>"+lt.getValue().getName()+"</td>");	
 			pw.print("<td>"+lt.getValue().getPrice()+"</td>");	
-			pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy'></td>");
-			pw.print("<td><input type='submit' name='Update' value='Update' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Remove' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Update' class='btnbuy'></td>");
 			pw.print("</tr>");
 			i++;
 			pw.print("</form>");
@@ -114,10 +117,10 @@ public class StoreManagement extends HttpServlet {
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+pt.getKey()+"'>");		
-			pw.print("<td>"+i+".</td><td>"+pt.getValue().getName()+"></td>");	
+			pw.print("<td>"+i+".</td><td>"+pt.getValue().getName()+"</td>");	
 			pw.print("<td>"+pt.getValue().getPrice()+"</td>");	
-			pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy'></td>");
-			pw.print("<td><input type='submit' name='Update' value='Update' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Remove' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Update' class='btnbuy'></td>");
 			pw.print("</tr>");
 			i++;
 			pw.print("</form>");
@@ -129,10 +132,25 @@ public class StoreManagement extends HttpServlet {
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+ss.getKey()+"'>");		
-			pw.print("<td>"+i+".</td><td>"+ss.getValue().getName()+"></td>");	
+			pw.print("<td>"+i+".</td><td>"+ss.getValue().getName()+"</td>");	
 			pw.print("<td>"+ss.getValue().getPrice()+"</td>");	
-			pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy'></td>");
-			pw.print("<td><input type='submit' name='Update' value='Update' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Remove' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Update' class='btnbuy'></td>");
+			pw.print("</tr>");
+			i++;
+			pw.print("</form>");
+		}
+		
+		for (Entry<String, SmartWatches> sw : swmap.entrySet()) 
+		{
+			pw.print("<form name ='ProductList' action='RemoveProduct' method='post'>");
+			pw.print("<tr>");		
+			
+			pw.print("<input type='hidden' name='productId' value='"+sw.getKey()+"'>");		
+			pw.print("<td>"+i+".</td><td>"+sw.getValue().getName()+"</td>");	
+			pw.print("<td>"+sw.getValue().getPrice()+"</td>");	
+			pw.print("<td><input type='submit' name='Product' value='Remove' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Update' class='btnbuy'></td>");
 			pw.print("</tr>");
 			i++;
 			pw.print("</form>");
@@ -144,10 +162,10 @@ public class StoreManagement extends HttpServlet {
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+vr.getKey()+"'>");		
-			pw.print("<td>"+i+".</td><td>"+vr.getValue().getName()+"></td>");	
+			pw.print("<td>"+i+".</td><td>"+vr.getValue().getName()+"</td>");	
 			pw.print("<td>"+vr.getValue().getPrice()+"</td>");	
-			pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy'></td>");
-			pw.print("<td><input type='submit' name='Update' value='Update' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Remove' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Update' class='btnbuy'></td>");
 			pw.print("</tr>");
 			i++;
 			pw.print("</form>");
@@ -159,14 +177,17 @@ public class StoreManagement extends HttpServlet {
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+p.getKey()+"'>");		
-			pw.print("<td>"+i+".</td><td>"+p.getValue().getName()+"></td>");	
+			pw.print("<td>"+i+".</td><td>"+p.getValue().getName()+"</td>");	
 			pw.print("<td>"+p.getValue().getPrice()+"</td>");	
-			pw.print("<td><input type='submit' name='Remove' value='Remove' class='btnbuy'></td>");
-			pw.print("<td><input type='submit' name='Update' value='Update' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Remove' class='btnbuy'></td>");
+			pw.print("<td><input type='submit' name='Product' value='Update' class='btnbuy'></td>");
 			pw.print("</tr>");
 			i++;
 			pw.print("</form>");
 		}
+		pw.print("</table></div></div></div>");
+		
+		utility.printHtml("Footer.html");
 	
 	}
 

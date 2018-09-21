@@ -23,11 +23,6 @@ import com.yxiao23.bean.VirtualReality;
 @WebServlet("/UpdateProduct")
 public class UpdateProduct extends HttpServlet {
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
@@ -40,22 +35,110 @@ public class UpdateProduct extends HttpServlet {
 			response.sendRedirect("Login");
 			return;
 		}
-		String username=utility.username();
+		String username = utility.username();
 		utility.printHtml("Header.html");
+//		
+//		HashMap<String, FitnessWatches> fwmap = utility.getFitnessWatches();
+//		HashMap<String, HeadPhones> hpmap = utility.getHeadPhones();
+//		HashMap<String, Laptops> ltmap = utility.getLaptops();
+//		HashMap<String, PetTracker> ptmap = utility.getPetTracker();
+//		HashMap<String, SmartSpeaker> ssmap = utility.getSmartSpeaker();
+//		HashMap<String, SmartWatches> swmap = utility.getSmartWatches();
+//		HashMap<String, VirtualReality> vrmap = utility.getVirtualReality();
+//		HashMap<String, Phones> phonemap = utility.getPhones();
 		
-		HashMap<String, FitnessWatches> fwmap = utility.getFitnessWatches();
-		HashMap<String, HeadPhones> hpmap = utility.getHeadPhones();
-		HashMap<String, Laptops> ltmap = utility.getLaptops();
-		HashMap<String, PetTracker> ptmap = utility.getPetTracker();
-		HashMap<String, SmartSpeaker> ssmap = utility.getSmartSpeaker();
-		HashMap<String, SmartWatches> swmap = utility.getSmartWatches();
-		HashMap<String, VirtualReality> vrmap = utility.getVirtualReality();
-		HashMap<String, Phones> phonemap = utility.getPhones();
+		String id = request.getParameter("productId");
+		String productName = request.getParameter("productName");
+		String productType = request.getParameter("productType");
+		String productPrice = request.getParameter("productPrice");
+		String productRetailer = request.getParameter("productRetailer");
+		String productCondition = request.getParameter("productCondition");
+		String productDiscount = request.getParameter("productDiscount");
+
+		if(productType.equals("Fitness Watches")) {
+			FitnessWatches fw = new FitnessWatches();
+			fw.setName(productName);
+			fw.setPrice(Double.parseDouble(productPrice));
+			fw.setRetailer(productRetailer);
+			fw.setCondition(productCondition);
+			fw.setDiscount(Double.parseDouble(productDiscount));
+			//fw.setImage(image);
+			utility.updateProduct(id, fw);	
+		}
+		if(productType.equals("HeadPhones")) {
+			HeadPhones hp = new HeadPhones();
+			hp.setName(productName);
+			hp.setPrice(Double.parseDouble(productPrice));
+			hp.setRetailer(productRetailer);
+			hp.setCondition(productCondition);
+			hp.setDiscount(Double.parseDouble(productDiscount));
+			//fw.setImage(image);
+			utility.updateProduct(id, hp);	
+		}
+		if(productType.equals("Laptops")) {
+			Laptops lt = new Laptops();
+			lt.setName(productName);
+			lt.setPrice(Double.parseDouble(productPrice));
+			lt.setRetailer(productRetailer);
+			lt.setCondition(productCondition);
+			lt.setDiscount(Double.parseDouble(productDiscount));
+			//fw.setImage(image);
+			utility.updateProduct(id,lt);	
+		}
+		if(productType.equals("PetTracker")) {
+			PetTracker pt = new PetTracker();
+			pt.setName(productName);
+			pt.setPrice(Double.parseDouble(productPrice));
+			pt.setRetailer(productRetailer);
+			pt.setCondition(productCondition);
+			pt.setDiscount(Double.parseDouble(productDiscount));
+			//fw.setImage(image);
+			utility.updateProduct(id, pt);	
+		}
+		if(productType.equals("Smart Speaker")) {
+			SmartSpeaker ss = new SmartSpeaker();
+			ss.setName(productName);
+			ss.setPrice(Double.parseDouble(productPrice));
+			ss.setRetailer(productRetailer);
+			ss.setCondition(productCondition);
+			ss.setDiscount(Double.parseDouble(productDiscount));
+			//fw.setImage(image);
+			utility.updateProduct(id, ss);	
+		}
+		if(productType.equals("Smart Watches")) {
+			SmartWatches sw = new SmartWatches();
+			sw.setName(productName);
+			sw.setPrice(Double.parseDouble(productPrice));
+			sw.setRetailer(productRetailer);
+			sw.setCondition(productCondition);
+			sw.setDiscount(Double.parseDouble(productDiscount));
+			//fw.setImage(image);
+			utility.updateProduct(id, sw);	
+		}
+		if(productType.equals("Virtual Reality")) {
+			VirtualReality vr = new VirtualReality();
+			vr.setName(productName);
+			vr.setPrice(Double.parseDouble(productPrice));
+			vr.setRetailer(productRetailer);
+			vr.setCondition(productCondition);
+			vr.setDiscount(Double.parseDouble(productDiscount));
+			//fw.setImage(image);
+			utility.updateProduct(id, vr);	
+		}
+		if(productType.equals("Phones")) {
+			Phones phone = new Phones();
+			phone.setName(productName);
+			phone.setPrice(Double.parseDouble(productPrice));
+			phone.setRetailer(productRetailer);
+			phone.setCondition(productCondition);
+			phone.setDiscount(Double.parseDouble(productDiscount));
+			//fw.setImage(image);
+			utility.updateProduct(id, phone);	
+		}
 		
 		
-		pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
-		pw.print("<a style='font-size: 24px;'>Order</a>");
-		pw.print("</h2><div class='entry'>");
+		response.sendRedirect("StoreManagement");
+
 	}
 
 }
