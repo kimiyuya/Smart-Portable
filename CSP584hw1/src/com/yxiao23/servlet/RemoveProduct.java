@@ -73,10 +73,6 @@ public class RemoveProduct extends HttpServlet {
 				pw.print("<td><input type='submit' name='Submit' value='Submit' class='btnbuy'></td>");
 				pw.print("</table></form>");
 		 		
-				
-		 		
-		 		//response.sendRedirect("UpdateProduct?productId="+id+"'");
-				//response.sendRedirect("SalesmanHome");
 		 		
 		 	}
 		 	

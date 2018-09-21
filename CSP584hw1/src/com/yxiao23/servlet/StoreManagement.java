@@ -52,10 +52,11 @@ public class StoreManagement extends HttpServlet {
 		pw.print("<a style='font-size: 24px;'>Order</a>");
 		pw.print("</h2><div class='entry'>");
 		
-//		pw.print("<form name ='AddProduct' action='AddProduct' method='post'>");
-//		pw.print("<td><input type='submit' name='AddProduct' value='Add Product' class='btnbuy'></td>");
+		pw.print("<h2><form name ='AddProduct' action='AddProduct' method='post'></h2>");
+		pw.print("<td><input type='submit' name='AddProduct' value='Add Product' class='btnbuy'></td>");
+		pw.print("</form>");
 		
-		pw.print("<table  class='gridtable'>");
+		pw.print("<table style='width:100%' class='gridtable'>");
 		pw.print("<tr>");
 		pw.print("<td>id:</td>");
 		pw.print("<td>ProductName:</td>");
