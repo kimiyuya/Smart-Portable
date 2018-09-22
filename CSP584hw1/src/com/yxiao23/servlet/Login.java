@@ -67,7 +67,7 @@ public class Login extends HttpServlet {
 					response.sendRedirect("StoreManagement");
 				}
 				if (usertype.equals("salesman")) {
-					response.sendRedirect("Home");
+					response.sendRedirect("SalesmanHome");
 				}
 				return;
 			}

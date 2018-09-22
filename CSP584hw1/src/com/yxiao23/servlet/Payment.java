@@ -42,13 +42,10 @@ public class Payment extends HttpServlet {
 		String userAddress = request.getParameter("userAddress");
 		String creditCardNo = request.getParameter("creditCardNo");
 		
-//		System.out.print("the user address is" +userAddress);
-//		System.out.print(creditCardNo);
+
 		if(!userAddress.isEmpty() && !creditCardNo.isEmpty() && !recipientName.isEmpty() )
 		{
-			//Random rand = new Random();
-			//int orderId = rand.nextInt(100);
-			//int orderId=utility.getOrderPaymentSize()+1;
+
 			orderId ++;
 			//iterate through each order
 

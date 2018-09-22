@@ -37,15 +37,7 @@ public class UpdateProduct extends HttpServlet {
 		}
 		String username = utility.username();
 		utility.printHtml("Header.html");
-//		
-//		HashMap<String, FitnessWatches> fwmap = utility.getFitnessWatches();
-//		HashMap<String, HeadPhones> hpmap = utility.getHeadPhones();
-//		HashMap<String, Laptops> ltmap = utility.getLaptops();
-//		HashMap<String, PetTracker> ptmap = utility.getPetTracker();
-//		HashMap<String, SmartSpeaker> ssmap = utility.getSmartSpeaker();
-//		HashMap<String, SmartWatches> swmap = utility.getSmartWatches();
-//		HashMap<String, VirtualReality> vrmap = utility.getVirtualReality();
-//		HashMap<String, Phones> phonemap = utility.getPhones();
+
 		
 		String id = request.getParameter("productId");
 		String productName = request.getParameter("productName");

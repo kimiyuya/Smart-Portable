@@ -17,6 +17,7 @@ public class OrderItem extends HttpServlet{
 	private String productImage;
 	private String retailer;
 	
+	
 	public OrderItem(String productName, double productPrice, String productImage, String retailer) {
 		this.productName = productName;
 		this.productPrice = productPrice;

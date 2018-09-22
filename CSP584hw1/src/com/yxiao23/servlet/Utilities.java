@@ -7,6 +7,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
 import java.io.IOException;
@@ -81,6 +82,30 @@ public class Utilities extends HttpServlet{
 				pw.print(result);
 	}
 	
+	/*  Print SalesmanHome html Function gets the html file name as function Argument, 
+	If the html file name is Header.html then It gets Username from session variables.
+	Account ,Cart Information ang Logout Options are Displayed*/
+
+	public void printSalesmanHomeHtml(String file) {
+		String result = HtmlToString(file);
+		//to print the right navigation in header of username cart and logout etc
+		if (file == "SalesmanHeader.html") {
+				result=result+"<div id='menu' style='float: right;'><ul>";
+			if (session.getAttribute("username")!=null){
+				String username = session.getAttribute("username").toString();
+				username = Character.toUpperCase(username.charAt(0)) + username.substring(1);
+				result = result + "<li><a><span class='glyphicon'>Hello,"+username+"</span></a></li>"
+						+ "<li><a href='Account'><span class='glyphicon'>Account</span></a></li>"
+						+ "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";			
+			}
+			else
+				result = result + "<li><a href='Login'><span class='glyphicon'>Login</span></a></li>";
+				
+				pw.print(result);
+		} else
+				pw.print(result);
+	}
+		
 
 	/*  getFullURL Function - Reconstructs the URL user request  */
 
@@ -172,6 +197,25 @@ public class Utilities extends HttpServlet{
 		return user;
 	}
 	
+	/*  getUserList Function putting all the user in local file to a arraylist.*/
+	public List<Users> getUserList(){
+		String usertype = usertype();
+		HashMap<String, Users> hm=new HashMap<String, Users>();
+		String TOMCAT_HOME = System.getProperty("catalina.home");
+			try
+			{		
+				FileInputStream fileInputStream=new FileInputStream(new File(TOMCAT_HOME+"//wtpwebapps//CSP584hw1//UserInfo.txt"));
+				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+				hm= (HashMap)objectInputStream.readObject();
+			}
+			catch(Exception e)
+			{
+			}	
+			List<Users> userList = new ArrayList<Users>(hm.values());
+
+		return userList;
+	}
+	
 	/*  getCustomerOrders Function gets  the Orders for the user*/
 	public ArrayList<OrderItem> getCustomerOrders(){
 		ArrayList<OrderItem> order = new ArrayList<OrderItem>(); 
@@ -221,6 +265,20 @@ public class Utilities extends HttpServlet{
 		if(isLoggedin())
 		return getCustomerOrders().size();
 		return 0;
+	}
+	
+	public List<OrderItem> showAllOrders() {
+		List<Users> userList = getUserList(); 
+		List<OrderItem> orders = new ArrayList<OrderItem>();
+		
+		for(int i = 0; i<userList.size();i++) {
+			//orders= OrderDB.orders.get(userList.get(i));
+			orders.addAll(OrderDB.orders.get(userList.get(i)));
+		}
+		//orders.addAll(OrderDB.orders.get(username()));
+
+		return orders;
+		//getUserList();
 	}
 	
 	/* StoreProduct Function stores the Purchased product in Orders HashMap according to the User Names.*/
@@ -421,7 +479,179 @@ public class Utilities extends HttpServlet{
 				System.out.println("inside exception file not written properly");
 			}	
 	}
+	
+	// store the payment details for orders, same as above, just different in parameter
+		public void AddPayment(OrderPayment op){
+			
+			HashMap<Integer, ArrayList<OrderPayment>> orderPayments= new HashMap<Integer, ArrayList<OrderPayment>>();
+			String TOMCAT_HOME = System.getProperty("catalina.home");
+				// get the payment details file 
+				try
+				{
+					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"//wtpwebapps//CSP584hw1//PaymentDetails.txt"));
+					ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+					orderPayments = (HashMap)objectInputStream.readObject();
+				}
+				catch(Exception e)
+				{
+				
+				}
+				if(orderPayments==null)
+				{
+					orderPayments = new HashMap<Integer, ArrayList<OrderPayment>>();
+				}
+				// if there exist order id already add it into same list for order id or create a new record with order id
+				
+				if(!orderPayments.containsKey(op.getOrderId())){	
+					ArrayList<OrderPayment> arr = new ArrayList<OrderPayment>();
+					orderPayments.put(op.getOrderId(), arr);
+				}
+			ArrayList<OrderPayment> listOrderPayment = orderPayments.get(op.getOrderId());		
+			//OrderPayment orderpayment = new OrderPayment(orderId,recipientName,orderName,orderPrice,userAddress,creditCardNo);
+			listOrderPayment.add(op);	
+				
+				// add order details into file
 
+				try
+				{	
+					FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"//wtpwebapps//CSP584hw1//PaymentDetails.txt"));
+					ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+	            	objectOutputStream.writeObject(orderPayments);
+					objectOutputStream.flush();
+					objectOutputStream.close();       
+					fileOutputStream.close();
+				}
+				catch(Exception e)
+				{
+					System.out.println("inside exception file not written properly");
+				}	
+		}
+	
+	// return all the payment details for file
+		public HashMap<Integer, ArrayList<OrderPayment>> getOrderPayment(){
+			
+			HashMap<Integer, ArrayList<OrderPayment>> orderPayments= new HashMap<Integer, ArrayList<OrderPayment>>();
+			String TOMCAT_HOME = System.getProperty("catalina.home");
+				// get the payment details file 
+				try
+				{
+					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"//wtpwebapps//CSP584hw1//PaymentDetails.txt"));
+					ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+					orderPayments = (HashMap)objectInputStream.readObject();
+				}
+				catch(Exception e)
+				{
+				
+				}
+				if(orderPayments==null)
+				{
+					orderPayments = new HashMap<Integer, ArrayList<OrderPayment>>();
+				}
+		
+				
+				return orderPayments;
+		
+		}
+
+	// remove the payment details for orders
+		public void removePayment(int orderId){
+			
+			HashMap<Integer, ArrayList<OrderPayment>> orderPayments= new HashMap<Integer, ArrayList<OrderPayment>>();
+			String TOMCAT_HOME = System.getProperty("catalina.home");
+				// get the payment details file 
+				try
+				{
+					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"//wtpwebapps//CSP584hw1//PaymentDetails.txt"));
+					ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+					orderPayments = (HashMap)objectInputStream.readObject();
+				}
+				catch(Exception e)
+				{
+				
+				}
+				if(orderPayments==null)
+				{
+					orderPayments = new HashMap<Integer, ArrayList<OrderPayment>>();
+				}
+				// if there exist order id already add it into same list for order id or create a new record with order id
+				
+				if(!orderPayments.containsKey(orderId)){	
+					ArrayList<OrderPayment> arr = new ArrayList<OrderPayment>();
+					orderPayments.put(orderId, arr);
+				}
+				
+				orderPayments.remove(orderId);
+//			ArrayList<OrderPayment> listOrderPayment = orderPayments.get(orderId);		
+//			OrderPayment orderpayment = new OrderPayment(orderId,recipientName,orderName,orderPrice,userAddress,creditCardNo);
+//			listOrderPayment.add(orderpayment);	
+				
+				// add order details into file
+
+				try
+				{	
+					FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"//wtpwebapps//CSP584hw1//PaymentDetails.txt"));
+					ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+	            	objectOutputStream.writeObject(orderPayments);
+					objectOutputStream.flush();
+					objectOutputStream.close();       
+					fileOutputStream.close();
+				}
+				catch(Exception e)
+				{
+					System.out.println("inside exception file not written properly");
+				}	
+		}
+		
+		// update the payment details for orders
+		public void updatePayment(OrderPayment op){
+			
+			HashMap<Integer, ArrayList<OrderPayment>> orderPayments= new HashMap<Integer, ArrayList<OrderPayment>>();
+			String TOMCAT_HOME = System.getProperty("catalina.home");
+				// get the payment details file 
+				try
+				{
+					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"//wtpwebapps//CSP584hw1//PaymentDetails.txt"));
+					ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+					orderPayments = (HashMap)objectInputStream.readObject();
+				}
+				catch(Exception e)
+				{
+				
+				}
+				if(orderPayments==null)
+				{
+					orderPayments = new HashMap<Integer, ArrayList<OrderPayment>>();
+				}
+				// if there exist order id already add it into same list for order id or create a new record with order id
+				
+				if(!orderPayments.containsKey(op.getOrderId())){	
+					ArrayList<OrderPayment> arr = new ArrayList<OrderPayment>();
+					orderPayments.put(op.getOrderId(), arr);
+				}
+				
+				
+			ArrayList<OrderPayment> listOrderPayment = orderPayments.get(op.getOrderId());		
+			//OrderPayment orderpayment = new OrderPayment(orderId,recipientName,orderName,orderPrice,userAddress,creditCardNo);
+			listOrderPayment.add(op);	
+			
+			orderPayments.replace(op.getOrderId(), listOrderPayment);
+				
+				// add order details into file
+
+				try
+				{	
+					FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"//wtpwebapps//CSP584hw1//PaymentDetails.txt"));
+					ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+	            	objectOutputStream.writeObject(orderPayments);
+					objectOutputStream.flush();
+					objectOutputStream.close();       
+					fileOutputStream.close();
+				}
+				catch(Exception e)
+				{
+					System.out.println("inside exception file not written properly");
+				}	
+		}
 	
 	/* getConsoles Functions returns the Hashmap with all consoles in the store.*/
 

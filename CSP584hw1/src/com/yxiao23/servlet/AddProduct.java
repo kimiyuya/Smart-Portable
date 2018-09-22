@@ -38,27 +38,16 @@ public class AddProduct extends HttpServlet {
 		String username = utility.username();
 		utility.printHtml("Header.html");
 		
-		pw.print("<form name ='updateProduct' action='AddProduct' method='post'>");
+		pw.print("<form name ='AddProduct' action='AddProduct' method='post'>");
 		pw.print("<table align=\"center\" border=\"1\" width=\"500px\"><tr>");
 		
-//		FitnessWatches fw = new FitnessWatches();
-//		HeadPhones hp = new HeadPhones();
-//		Laptops lt = new Laptops();
-//		PetTracker pt = new PetTracker();
-//		SmartSpeaker ss = new SmartSpeaker();
-//		SmartWatches sw = new SmartWatches();
-//		VirtualReality vr = new VirtualReality();
-//		Phones phone = new Phones();
 		
-		//pw.print("<input type ='hidden' name = 'productId' value='"+id+"'>");
 		pw.print("<tr><td>Product Name:</td><td><input type ='text' name = 'productName'/></td></tr>");
 		pw.print("<tr><td>Product Type:</td><td><select name='productType'><option>Fitness Watches</option><option>HeadPhones</option><option>Laptops</option><option>PetTracker</option><option>Smart Speaker</option><option>Smart Watches</option><option>Virtual Reality</option><option>Phones</option></td>");
 		pw.print("<tr><td>Product Price:</td><td><input type ='text' name = 'productPrice'/></td></tr>");
 		pw.print("<tr><td>Product Retailer:</td><td><input type ='text' name = 'productRetailer'/></td></tr>");
 		pw.print("<tr><td>Product Condition:</td><td><label for='r5'><input type='radio' value='new' name='productCondition'>NEW</label><label for='r6'><input type='radio' value='used' name='productCondition'>USED</label></td></tr>");
-		//pw.print("<tr><td><label for='r6'><input type='radio' value='used' name='productCondition'>USED</label></td></tr>");
 		pw.print("<tr><td>Product Discount:</td><td><input type ='text' name = 'productDiscount'/></td></tr>");
-
 		pw.print("<td><input type='reset' name='Reset' value='Reset' class='btnbuy'></td>");
 		pw.print("<td><input type='submit' name='Submit' value='Submit' class='btnbuy'></td>");
 		pw.print("</table></form>");

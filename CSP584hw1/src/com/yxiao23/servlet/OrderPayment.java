@@ -29,6 +29,10 @@ public class OrderPayment implements Serializable{
 	 	this.creditCardNo=creditCardNo;
 		}
 
+	public OrderPayment() {
+		
+	}
+
 	public String getUserAddress() {
 		return userAddress;
 	}

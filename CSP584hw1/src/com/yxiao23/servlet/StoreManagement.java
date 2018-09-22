@@ -49,7 +49,7 @@ public class StoreManagement extends HttpServlet {
 		
 		
 		pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
-		pw.print("<a style='font-size: 24px;'>Order</a>");
+		pw.print("<a style='font-size: 24px;'>Product Management</a>");
 		pw.print("</h2><div class='entry'>");
 		
 		pw.print("<h2><form name ='AddProduct' action='AddProduct' method='post'></h2>");

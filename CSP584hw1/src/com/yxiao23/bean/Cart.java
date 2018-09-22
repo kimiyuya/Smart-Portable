@@ -34,7 +34,7 @@ public class Cart extends HttpServlet {
 		String type = request.getParameter("type");
 		String maker = request.getParameter("maker");
 		String access = request.getParameter("access");
-		System.out.print("name" + name + "type" + type + "maker" + maker + "access" + access);
+		//System.out.print("name" + name + "type" + type + "maker" + maker + "access" + access);
 
 		/* StoreProduct Function stores the Purchased product in Orders HashMap.*/	
 		

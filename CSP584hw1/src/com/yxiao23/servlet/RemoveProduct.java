@@ -45,20 +45,10 @@ public class RemoveProduct extends HttpServlet {
 				pw.print("<a style='font-size: 24px;'>UPDATE PRODUCT</a>");
 				pw.print("</h2><div class='entry'>");
 				
-				
-				//pw.print("<input type='hidden' name='productId' value='"+fw.getKey()+"'>");	
+
 				
 				pw.print("<form name ='updateProduct' action='UpdateProduct' method='post'>");
 				pw.print("<table align=\"center\" border=\"1\" width=\"500px\"><tr>");
-				
-				FitnessWatches fw = new FitnessWatches();
-				HeadPhones hp = new HeadPhones();
-				Laptops lt = new Laptops();
-				PetTracker pt = new PetTracker();
-				SmartSpeaker ss = new SmartSpeaker();
-				SmartWatches sw = new SmartWatches();
-				VirtualReality vr = new VirtualReality();
-				Phones phone = new Phones();
 				
 				pw.print("<input type ='hidden' name = 'productId' value='"+id+"'>");
 				pw.print("<tr><td>Product Name:</td><td><input type ='text' name = 'productName'/></td></tr>");
@@ -66,7 +56,7 @@ public class RemoveProduct extends HttpServlet {
 				pw.print("<tr><td>Product Price:</td><td><input type ='text' name = 'productPrice'/></td></tr>");
 				pw.print("<tr><td>Product Retailer:</td><td><input type ='text' name = 'productRetailer'/></td></tr>");
 				pw.print("<tr><td>Product Condition:</td><td><label for='r5'><input type='radio' value='new' name='productCondition'>NEW</label><label for='r6'><input type='radio' value='used' name='productCondition'>USED</label></td></tr>");
-				//pw.print("<tr><td><label for='r6'><input type='radio' value='used' name='productCondition'>USED</label></td></tr>");
+				
 				pw.print("<tr><td>Product Discount:</td><td><input type ='text' name = 'productDiscount'/></td></tr>");
 
 				pw.print("<td><input type='reset' name='Reset' value='Reset' class='btnbuy'></td>");
