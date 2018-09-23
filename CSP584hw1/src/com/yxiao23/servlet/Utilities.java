@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.ArrayList;
@@ -868,7 +869,13 @@ public class Utilities extends HttpServlet{
 	    }
 	 
 	 
-	 
+	    public static String getUUIDFileName(String fileName){
+			// 将文件名的前面部分进行截取：xx.jpg   --->   .jpg
+			int idx = fileName.lastIndexOf(".");
+			String extention = fileName.substring(idx);
+			String uuidFileName = UUID.randomUUID().toString().replace("-", "")+extention;
+			return uuidFileName;
+		}
 	/* getProducts Functions returns the Arraylist of consoles in the store.*/
 
 //	public ArrayList<String> getProductsFitnessWatch(){
