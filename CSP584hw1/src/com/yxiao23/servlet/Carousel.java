@@ -68,8 +68,6 @@ public class Carousel{
 				sb.append("<div class='carousel-inner'>");
 						
 				Phones phone1 = hm.get(oi.getProductName());
-				System.out.print(oi.getProductName()+"肖毓麟");
-				System.out.print(phone1.getName().toString()+"阎雪");
 				int k = 0; int size= hm.size();
 			
 				for(Map.Entry<String, String> acc:phone1.getAccessories().entrySet())
@@ -88,23 +86,23 @@ public class Carousel{
 					sb.append("<div id='shop_item'>");
 					sb.append("<h3>"+accessory.getName()+"</h3>");
 					sb.append("<strong>"+accessory.getPrice()+"$</strong><ul>");
-					sb.append("<li id='item'><img src='images/accessories/"+accessory.getImage()+"' alt='' /></li>");
+					sb.append("<li id='item'><img src='img/"+accessory.getImage()+"' alt='' /></li>");
 					sb.append("<li><form method='post' action='Cart'>" +
 							"<input type='hidden' name='name' value='"+acc.getValue()+"'>"+
 							"<input type='hidden' name='type' value='accessories'>"+
 							"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
 							"<input type='hidden' name='access' value='"+oi.getProductName()+"'>"+
 							"<input type='submit' class='btnbuy' value='Buy Now'></form></li>");
-					sb.append("<li><form method='post' action='WriteReview'>"+"<input type='hidden' name='name' value='"+acc+"'>"+
-							"<input type='hidden' name='type' value='accessories'>"+
-							"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
-							"<input type='hidden' name='access' value='"+oi.getProductName()+"'>"+
-							"<input type='submit' value='WriteReview' class='btnreview'></form></li>");
-					sb.append("<li><form method='post' action='ViewReview'>"+"<input type='hidden' name='name' value='"+acc+"'>"+
-							"<input type='hidden' name='type' value='accessories'>"+
-							"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
-							"<input type='hidden' name='access' value='"+oi.getProductName()+"'>"+
-							"<input type='submit' value='ViewReview' class='btnreview'></form></li>");
+//					sb.append("<li><form method='post' action='WriteReview'>"+"<input type='hidden' name='name' value='"+acc+"'>"+
+//							"<input type='hidden' name='type' value='accessories'>"+
+//							"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
+//							"<input type='hidden' name='access' value='"+oi.getProductName()+"'>"+
+//							"<input type='submit' value='WriteReview' class='btnreview'></form></li>");
+//					sb.append("<li><form method='post' action='ViewReview'>"+"<input type='hidden' name='name' value='"+acc+"'>"+
+//							"<input type='hidden' name='type' value='accessories'>"+
+//							"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
+//							"<input type='hidden' name='access' value='"+oi.getProductName()+"'>"+
+//							"<input type='submit' value='ViewReview' class='btnreview'></form></li>");
 
 					sb.append("</ul></div></div>");
 					sb.append("</div>");

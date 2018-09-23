@@ -35,7 +35,6 @@ public class StoreManagement extends HttpServlet {
 			response.sendRedirect("Login");
 			return;
 		}
-		String username=utility.username();
 		utility.printHtml("Header.html");
 		
 		HashMap<String, FitnessWatches> fwmap = utility.getFitnessWatches();

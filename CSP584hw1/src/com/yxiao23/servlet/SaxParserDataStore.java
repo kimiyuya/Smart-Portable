@@ -152,19 +152,18 @@ public class SaxParserDataStore extends DefaultHandler {
 
         //
         if (elementName.equals("accessory") 
-        		&& !currentElement.equals("fitnesswatch")
-        		&& !currentElement.equals("smartwatch")
-        		&& !currentElement.equals("headphone")
-        		&& !currentElement.equals("virtualreality")
-        		&& !currentElement.equals("pettracker")
+//        		&& !currentElement.equals("fitnesswatch")
+//        		&& !currentElement.equals("smartwatch")
+//        		&& !currentElement.equals("headphone")
+//        		&& !currentElement.equals("virtualreality")
+//        		&& !currentElement.equals("pettracker")
         		&& !currentElement.equals("phone")
-        		&& !currentElement.equals("laptop")
-        		&& !currentElement.equals("smartspeaker")
+ //       		&& !currentElement.equals("laptop")
+//        		&& !currentElement.equals("smartspeaker")
         		){
-        	currentElement = "Accessory";
+        	currentElement = "accessory";
         	accessory = new Accessory();
         	accessory.setId(attributes.getValue("id"));
-        	System.out.println("lalalalalalal");
         	
         }
 
@@ -213,66 +212,66 @@ public class SaxParserDataStore extends DefaultHandler {
         
         
         //to Encapsulate accessory Object into accessories(HashMap)
-        if (element.equals("accessory") && currentElement.equals("Accessory")) {
+        if (element.equals("accessory") && currentElement.equals("accessory")) {
         	accessories.put(accessory.getId(),accessory); 
 			return; 
         }
         //to get accessory product name of FitnessWatches
-		if (element.equals("accessory") && currentElement.equals("fitnesswatch")) 
-		{
-			accessoryHashMap.put(elementValueRead,elementValueRead);
-		}
-		//to encapsulate the product accessory to the related product Object.
-      	if (element.equalsIgnoreCase("accessories") && currentElement.equals("fitnesswatch")) {
-      		fitnesswatch.setAccessories(accessoryHashMap);
-			accessoryHashMap = new HashMap<String,String>();
-			return;
-		}
-
-      
-  		if (element.equals("accessory") && currentElement.equals("smartwatch")) 
-  		{
-  			accessoryHashMap.put(elementValueRead,elementValueRead);
-  		}
-  		
-    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("smartwatch")) {
-    		smartwatch.setAccessories(accessoryHashMap);
-  			accessoryHashMap = new HashMap<String,String>();
-  			return;
-  		}
-        	
-    	if (element.equals("accessory") && currentElement.equals("headphone")) 
-  		{
-  			accessoryHashMap.put(elementValueRead,elementValueRead);
-  		}
-  		
-    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("headphone")) {
-    		headphone.setAccessories(accessoryHashMap);
-			accessoryHashMap = new HashMap<String,String>();
-			return;
-  		}   
-        	
-    	if (element.equals("accessory") && currentElement.equals("virtualreality")) 
-  		{
-  			accessoryHashMap.put(elementValueRead,elementValueRead);
-  		}
-  		
-    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("virtualreality")) {
-    		virtualreality.setAccessories(accessoryHashMap);
-			accessoryHashMap = new HashMap<String,String>();
-			return;
-  		} 
-        	
-    	if (element.equals("accessory") && currentElement.equals("pettracker")) 
-  		{
-  			accessoryHashMap.put(elementValueRead,elementValueRead);
-  		}
-  		
-    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("pettracker")) {
-    		pettracker.setAccessories(accessoryHashMap);
-			accessoryHashMap = new HashMap<String,String>();
-			return;
-  		} 
+//		if (element.equals("accessory") && currentElement.equals("fitnesswatch")) 
+//		{
+//			accessoryHashMap.put(elementValueRead,elementValueRead);
+//		}
+//		//to encapsulate the product accessory to the related product Object.
+//      	if (element.equalsIgnoreCase("accessories") && currentElement.equals("fitnesswatch")) {
+//      		fitnesswatch.setAccessories(accessoryHashMap);
+//			accessoryHashMap = new HashMap<String,String>();
+//			return;
+//		}
+//
+//      
+//  		if (element.equals("accessory") && currentElement.equals("smartwatch")) 
+//  		{
+//  			accessoryHashMap.put(elementValueRead,elementValueRead);
+//  		}
+//  		
+//    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("smartwatch")) {
+//    		smartwatch.setAccessories(accessoryHashMap);
+//  			accessoryHashMap = new HashMap<String,String>();
+//  			return;
+//  		}
+//        	
+//    	if (element.equals("accessory") && currentElement.equals("headphone")) 
+//  		{
+//  			accessoryHashMap.put(elementValueRead,elementValueRead);
+//  		}
+//  		
+//    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("headphone")) {
+//    		headphone.setAccessories(accessoryHashMap);
+//			accessoryHashMap = new HashMap<String,String>();
+//			return;
+//  		}   
+//        	
+//    	if (element.equals("accessory") && currentElement.equals("virtualreality")) 
+//  		{
+//  			accessoryHashMap.put(elementValueRead,elementValueRead);
+//  		}
+//  		
+//    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("virtualreality")) {
+//    		virtualreality.setAccessories(accessoryHashMap);
+//			accessoryHashMap = new HashMap<String,String>();
+//			return;
+//  		} 
+//        	
+//    	if (element.equals("accessory") && currentElement.equals("pettracker")) 
+//  		{
+//  			accessoryHashMap.put(elementValueRead,elementValueRead);
+//  		}
+//  		
+//    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("pettracker")) {
+//    		pettracker.setAccessories(accessoryHashMap);
+//			accessoryHashMap = new HashMap<String,String>();
+//			return;
+//  		} 
         	
     	if (element.equals("accessory") && currentElement.equals("phone")) 
   		{
@@ -285,27 +284,27 @@ public class SaxParserDataStore extends DefaultHandler {
 			return;
   		} 
         	
-    	if (element.equals("accessory") && currentElement.equals("laptop")) 
-  		{
-  			accessoryHashMap.put(elementValueRead,elementValueRead);
-  		}
-  		
-    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("laptop")) {
-    		laptop.setAccessories(accessoryHashMap);
-			accessoryHashMap = new HashMap<String,String>();
-			return;
-  		} 
-    	
-    	if (element.equals("accessory") && currentElement.equals("smartspeaker")) 
-  		{
-  			accessoryHashMap.put(elementValueRead,elementValueRead);
-  		}
-  		
-    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("smartspeaker")) {
-    		smartspeaker.setAccessories(accessoryHashMap);
-			accessoryHashMap = new HashMap<String,String>();
-			return;
-  		} 
+//    	if (element.equals("accessory") && currentElement.equals("laptop")) 
+//  		{
+//  			accessoryHashMap.put(elementValueRead,elementValueRead);
+//  		}
+//  		
+//    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("laptop")) {
+//    		laptop.setAccessories(accessoryHashMap);
+//			accessoryHashMap = new HashMap<String,String>();
+//			return;
+//  		} 
+//    	
+//    	if (element.equals("accessory") && currentElement.equals("smartspeaker")) 
+//  		{
+//  			accessoryHashMap.put(elementValueRead,elementValueRead);
+//  		}
+//  		
+//    	if (element.equalsIgnoreCase("accessories") && currentElement.equals("smartspeaker")) {
+//    		smartspeaker.setAccessories(accessoryHashMap);
+//			accessoryHashMap = new HashMap<String,String>();
+//			return;
+//  		} 
       	
       	
         if (element.equalsIgnoreCase("image")) {

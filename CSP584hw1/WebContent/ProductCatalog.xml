@@ -616,6 +616,8 @@
 	        <accessories>
 	            <accessory>GalaxyS8_ScreenProtector</accessory>
 	            <accessory>GalaxyS8_Case</accessory>
+	            <accessory>VeeR_3D_Headsets</accessory>
+	            <accessory>Samsung_VR_Controller</accessory>
         	</accessories>
 		</phone>
 		<phone id = "iPhone X">
@@ -626,8 +628,12 @@
 	        <condition>New</condition>
 	        <discount>10.0</discount>
 	        <accessories>
-	            <accessory>GalaxyS8_ScreenProtector</accessory>
-	            <accessory>GalaxyS8_Case</accessory>	
+	            <accessory>Sonos SUB Wireless Subwoofer</accessory>
+	            <accessory>Pearl mCover Hard Shell Case</accessory>
+	            <accessory>Gibi_GPS_Tracker</accessory>	
+	            <accessory>W296BT_Headphones</accessory>
+	            <accessory>Soft_Silicone_Watch_Strap</accessory>	
+	            <accessory>Toobur_Replacement_Straps</accessory>		
         	</accessories>
 		</phone>
 		<phone id = "iPhone 6s">
@@ -638,8 +644,12 @@
 	        <condition>New</condition>
 	        <discount>10.0</discount>
 	        <accessories>
-	            <accessory>GalaxyS8_ScreenProtector</accessory>
-	            <accessory>GalaxyS8_Case</accessory>	
+	            <accessory>Sonos SUB Wireless Subwoofer</accessory>
+	            <accessory>Pearl mCover Hard Shell Case</accessory>
+	            <accessory>Gibi_GPS_Tracker</accessory>	
+	            <accessory>W296BT_Headphones</accessory>
+	            <accessory>Soft_Silicone_Watch_Strap</accessory>	
+	            <accessory>Toobur_Replacement_Straps</accessory>	
         	</accessories>
 		</phone>
 		<phone id = "iPhone 6">
@@ -650,8 +660,12 @@
 	        <condition>New</condition>
 	        <discount>10.0</discount>
 	        <accessories>
-	            <accessory>GalaxyS8_ScreenProtector</accessory>
-	            <accessory>GalaxyS8_Case</accessory>	
+	            <accessory>Sonos SUB Wireless Subwoofer</accessory>
+	            <accessory>Pearl mCover Hard Shell Case</accessory>
+	            <accessory>Gibi_GPS_Tracker</accessory>	
+	            <accessory>W296BT_Headphones</accessory>
+	            <accessory>Soft_Silicone_Watch_Strap</accessory>	
+	            <accessory>Toobur_Replacement_Straps</accessory>	
         	</accessories>
 		</phone>
 		<phone id = "iPhone 7">
@@ -662,8 +676,12 @@
 	        <condition>New</condition>
 	        <discount>10.0</discount>
 	        <accessories>
-	            <accessory>GalaxyS8_ScreenProtector</accessory>
-	            <accessory>GalaxyS8_Case</accessory>	
+	           <accessory>Sonos SUB Wireless Subwoofer</accessory>
+	            <accessory>Pearl mCover Hard Shell Case</accessory>
+	            <accessory>Gibi_GPS_Tracker</accessory>	
+	            <accessory>W296BT_Headphones</accessory>
+	            <accessory>Soft_Silicone_Watch_Strap</accessory>	
+	            <accessory>Toobur_Replacement_Straps</accessory>		
         	</accessories>
 		</phone>
 		<phone id = "iPhone 7Plus">
@@ -674,8 +692,12 @@
 	        <condition>New</condition>
 	        <discount>10.0</discount>
 	        <accessories>
-	            <accessory>GalaxyS8_ScreenProtector</accessory>
-	            <accessory>GalaxyS8_Case</accessory>	
+	            <accessory>Sonos SUB Wireless Subwoofer</accessory>
+	            <accessory>Pearl mCover Hard Shell Case</accessory>
+	            <accessory>Gibi_GPS_Tracker</accessory>	
+	            <accessory>W296BT_Headphones</accessory>
+	            <accessory>Soft_Silicone_Watch_Strap</accessory>	
+	            <accessory>Toobur_Replacement_Straps</accessory>			
         	</accessories>
 		</phone>
 		<phone id = "Samsung Galaxy J7">
@@ -686,8 +708,10 @@
 	        <condition>New</condition>
 	        <discount>10.0</discount>
 	        <accessories>
-	            <accessory>GalaxyS8_ScreenProtector</accessory>
+	             <accessory>GalaxyS8_ScreenProtector</accessory>
 	            <accessory>GalaxyS8_Case</accessory>
+	            <accessory>VeeR_3D_Headsets</accessory>
+	            <accessory>Samsung_VR_Controller</accessory>
         	</accessories>
 		</phone>
 		<phone id = "Samsung Galaxy J5">
@@ -698,8 +722,10 @@
 	        <condition>New</condition>
 	        <discount>10.0</discount>
 	        <accessories>
-	            <accessory>GalaxyS8_ScreenProtector</accessory>
+	             <accessory>GalaxyS8_ScreenProtector</accessory>
 	            <accessory>GalaxyS8_Case</accessory>
+	            <accessory>VeeR_3D_Headsets</accessory>
+	            <accessory>Samsung_VR_Controller</accessory>
         	</accessories>
 		</phone>
 		<phone id = "Sony Xperia XZ2">
@@ -710,8 +736,10 @@
 	        <condition>New</condition>
 	        <discount>10.0</discount>
 	        <accessories>
-	            <accessory>GalaxyS8_ScreenProtector</accessory>
-	            <accessory>GalaxyS8_Case</accessory>
+	            <accessory>CASEMATIX Carry Case for Whistle 3</accessory>
+	            <accessory>Reflective Cat Collar with Bell</accessory>
+	            <accessory>All-New Sonos Beam+AmazonBasics 11.6-Inch Laptop Sleeve</accessory>
+	            <accessory>SIMCard</accessory>
         	</accessories>
 		</phone>
 		<phone id = "Sony Xperia XA">
@@ -722,8 +750,10 @@
 	        <condition>New</condition>
 	        <discount>10.0</discount>
 	        <accessories>
-	            <accessory>GalaxyS8_ScreenProtector</accessory>
-	            <accessory>GalaxyS8_Case</accessory>
+	           <accessory>CASEMATIX Carry Case for Whistle 3</accessory>
+	            <accessory>Reflective Cat Collar with Bell</accessory>
+	            <accessory>All-New Sonos Beam+AmazonBasics 11.6-Inch Laptop Sleeve</accessory>
+	            <accessory>SIMCard</accessory>
         	</accessories>
 		</phone>
 </PhonesCatalog>
@@ -982,7 +1012,7 @@
         <name>Toobur Replacement Straps</name>
         <price>9.99</price>
         <image>Toobur_Straps.jpg</image>
-        <manufacturer>Toobur</manufacturer>
+        <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
      </accessory>
@@ -991,7 +1021,7 @@
         <name>Toobur Soft Silicone Watch Strap</name>
         <price>19.99</price>
         <image>Soft_SiliconeStrap.jpg</image>
-        <manufacturer>Toobur</manufacturer>
+        <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
      </accessory>
@@ -999,7 +1029,7 @@
         <name>Edifier W296BT Bluetooth v4.1 Sports Headphones </name>
         <price>59.99</price>
         <image>SL1500_.jpg</image>
-        <manufacturer>Edifier</manufacturer>
+        <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>20.0</discount>
      </accessory>
@@ -1023,7 +1053,7 @@
         <name>Gibi 2nd Gen Pet GPS Tracker</name>
         <price>20.00</price>
         <image>51mrmeqwkuL.jpg</image>
-        <manufacturer>Gibi</manufacturer>
+        <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
      </accessory>
@@ -1031,7 +1061,7 @@
         <name>CASEMATIX Carry Case for Whistle 3</name>
         <price>20.00</price>
         <image>CASEMATIX.jpg</image>
-        <manufacturer>CASEMATIX</manufacturer>
+        <manufacturer>Sony</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
      </accessory>
@@ -1039,7 +1069,7 @@
         <name>Reflective Cat Collar with Bell</name>
         <price>10.00</price>
         <image>belt.jpg</image>
-        <manufacturer>CASEMATIX</manufacturer>
+        <manufacturer>Sony</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
      </accessory>
@@ -1047,7 +1077,7 @@
         <name>$50 Gibi SIM Card for GPS Tracking Devices</name>
         <price>50.00</price>
         <image>simcard.jpg</image>
-        <manufacturer>Gibi</manufacturer>
+        <manufacturer>Sony</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
      </accessory>
@@ -1071,7 +1101,7 @@
         <name>AmazonBasics 11.6-Inch Laptop Sleeve</name>
         <price>15.99</price>
         <image>laptopSleeve.jpg</image>
-        <manufacturer>Amazon</manufacturer>
+        <manufacturer>Sony</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
      </accessory>
@@ -1079,7 +1109,7 @@
         <name>Pearl mCover Hard Shell Case</name>
         <price>11.99</price>
         <image>hardShellcase.jpg</image>
-        <manufacturer>Amazon</manufacturer>
+        <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>20.0</discount>
      </accessory>
@@ -1087,7 +1117,7 @@
         <name>All-New Sonos Beam</name>
         <price>48.00</price>
         <image>sonosBeam.jpg</image>
-        <manufacturer>Amazon</manufacturer>
+        <manufacturer>Sony</manufacturer>
         <condition>New</condition>
         <discount>20.0</discount>
      </accessory>
@@ -1095,7 +1125,7 @@
         <name>Sonos SUB Wireless Subwoofer</name>
         <price>19.99</price>
         <image>subwoofer.jpg</image>
-        <manufacturer>Amazon</manufacturer>
+        <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>20.0</discount>
      </accessory>

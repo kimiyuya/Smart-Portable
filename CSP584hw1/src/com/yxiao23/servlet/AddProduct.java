@@ -94,7 +94,7 @@ public class AddProduct extends HttpServlet {
 					if(name.equals("productType")) {
 						productType = fileItem.getString("UTF-8");
 					}
-					System.out.println(name+"    "+value);
+					
 					map.put(name, value);
 					
 			}else {
@@ -124,22 +124,12 @@ public class AddProduct extends HttpServlet {
 				}
 			}
 			}
-				System.out.println(map);
-		// 获得ServletContext对象:
-		//List<User> userList = (List<User>) this.getServletContext().getAttribute("list");
+				
+
 		
 		
 		String id = map.get("productName");
-		
-		//default id = productName
-//		String id = request.getParameter("productName");
-//		String productName = request.getParameter("productName");
-////		String productType = fileName;
-////				request.getParameter("productType");
-//		String productPrice = request.getParameter("productPrice");
-//		String productRetailer = request.getParameter("productRetailer");
-//		String productCondition = request.getParameter("productCondition");
-//		String productDiscount = request.getParameter("productDiscount");
+
 		
 		if(productType.equals("Fitness Watches")) {		
 			FitnessWatches fw = new FitnessWatches();
@@ -231,7 +221,7 @@ public class AddProduct extends HttpServlet {
 		}
 		response.sendRedirect("StoreManagement");
 	}catch (FileUploadException e) {
-		// TODO Auto-generated catch block
+		
 		e.printStackTrace();
 	}
 	

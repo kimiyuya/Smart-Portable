@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-/**
- * Servlet implementation class RemoveProduct
- */
 @WebServlet("/RemoveUpdateOrder")
 public class RemoveUpdateOrder extends HttpServlet {
 	
@@ -21,8 +18,6 @@ public class RemoveUpdateOrder extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		Utilities utility = new Utilities(request, pw);
-		String a = request.getParameter("123");
-		System.out.println(a+"=================================");
 		//int orderId = Integer.parseInt(request.getParameter("OrderId"));
 		String oid = request.getParameter("b");
 		System.out.println(oid+"++++++++++++++++++++++");
@@ -94,28 +89,6 @@ public class RemoveUpdateOrder extends HttpServlet {
             pw.print("</td></tr></table>");
             pw.print("</form></div></div></div>");
 	 	}
-		 	//update orders
-//		 	if (request.getParameter("Order").equals("Update")) {
-//		 		utility.printSalesmanHomeHtml("SalesmanHeader.html");
-//		 		pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
-//				pw.print("<a style='font-size: 24px;'>UPDATE ORDER</a>");
-//				pw.print("</h2><div class='entry'>");
-//				
-//				pw.print("<form name ='AddProduct' action='UpdateOrder' method='post'>");
-//				pw.print("<table align=\"center\" border=\"1\" width=\"500px\"><tr>");
-//				
-//				pw.print("<input type ='hidden' name = 'orderId' value='"+id+"'>");
-//				pw.print("<tr><td>Order Name:</td><td><input type ='text' name = 'orderName'/></td></tr>");
-//				pw.print("<tr><td>User Name:</td><td><input type ='text' name = 'userName'/></td></tr>");
-//				pw.print("<tr><td>User Address:</td><td><input type ='text' name = 'userAdd'/></td></tr>");
-//				pw.print("<tr><td>Order Price:</td><td><input type ='text' name = 'orderPrice'/></td></tr>");
-//				pw.print("<tr><td>User CreditCard:</td><td><input type ='text' name = 'userCreditcard'/></td></tr>");
-//				pw.print("<td><input type='reset' name='Reset' value='Reset' class='btnbuy'></td>");
-//				pw.print("<td><input type='submit' name='Submit' value='Submit' class='btnbuy'></td>");
-//				pw.print("</table></form>");
-//				
-//		 		
-//		 	}
 		 	
 
 	}
