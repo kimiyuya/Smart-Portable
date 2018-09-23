@@ -45,6 +45,8 @@ public class RemoveProduct extends HttpServlet {
 				pw.print("<a style='font-size: 24px;'>UPDATE PRODUCT</a>");
 				pw.print("</h2><div class='entry'>");
 				
+				String productType = request.getParameter("productType");
+				
 
 				
 				pw.print("<form name ='updateProduct' action='UpdateProduct' method='post'>");
@@ -52,12 +54,26 @@ public class RemoveProduct extends HttpServlet {
 				
 				pw.print("<input type ='hidden' name = 'productId' value='"+id+"'>");
 				pw.print("<tr><td>Product Name:</td><td><input type ='text' name = 'productName'/></td></tr>");
-				pw.print("<tr><td>Product Type:</td><td><select name='productType'><option>Fitness Watches</option><option>HeadPhones</option><option>Laptops</option><option>PetTracker</option><option>Smart Speaker</option><option>Smart Watches</option><option>Virtual Reality</option><option>Phones</option></td>");
+				//pw.print("<tr><td>Product Type:</td><td><select name='productType'><option>Fitness Watches</option><option>HeadPhones</option><option>Laptops</option><option>PetTracker</option><option>Smart Speaker</option><option>Smart Watches</option><option>Virtual Reality</option><option>Phones</option></td>");
 				pw.print("<tr><td>Product Price:</td><td><input type ='text' name = 'productPrice'/></td></tr>");
 				pw.print("<tr><td>Product Retailer:</td><td><input type ='text' name = 'productRetailer'/></td></tr>");
 				pw.print("<tr><td>Product Condition:</td><td><label for='r5'><input type='radio' value='new' name='productCondition'>NEW</label><label for='r6'><input type='radio' value='used' name='productCondition'>USED</label></td></tr>");
 				
 				pw.print("<tr><td>Product Discount:</td><td><input type ='text' name = 'productDiscount'/></td></tr>");
+				
+				switch(productType) {
+				case "PetTracker": pw.print("<input type='hidden' name='productType' value='PetTracker'>"); break;
+				case "Fitness Watches": pw.print("<input type='hidden' name='productType' value='Fitness Watches'>"); break;
+				case "HeadPhones": pw.print("<input type='hidden' name='productType' value='HeadPhones'>"); break;
+				case "Laptops": pw.print("<input type='hidden' name='productType' value='Laptops'>"); break;
+				case "Smart Speaker": pw.print("<input type='hidden' name='productType' value='Smart Speaker'>"); break;
+				case "Smart Watches": pw.print("<input type='hidden' name='productType' value='Smart Watches'>"); break;
+				case "Virtual Reality": pw.print("<input type='hidden' name='productType' value='Virtual Reality'>"); break;
+				case "Phones": pw.print("<input type='hidden' name='productType' value='Phones'>"); break;
+				
+				
+				
+				}
 
 				pw.print("<td><input type='reset' name='Reset' value='Reset' class='btnbuy'></td>");
 				pw.print("<td><input type='submit' name='Submit' value='Submit' class='btnbuy'></td>");

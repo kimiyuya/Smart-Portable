@@ -67,6 +67,7 @@ public class StoreManagement extends HttpServlet {
 		for (Entry<String, FitnessWatches> fw : fwmap.entrySet()) 
 		{
 			pw.print("<form name ='ProductList' action='RemoveProduct' method='post'>");
+			pw.print("<input type='hidden' name='productType' value='Fitness Watches'>");
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+fw.getKey()+"'>");		
@@ -83,6 +84,7 @@ public class StoreManagement extends HttpServlet {
 		for (Entry<String, HeadPhones> hp : hpmap.entrySet()) 
 		{
 			pw.print("<form name ='ProductList' action='RemoveProduct' method='post'>");
+			pw.print("<input type='hidden' name='productType' value='HeadPhones'>");
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+hp.getKey()+"'>");		
@@ -100,6 +102,7 @@ public class StoreManagement extends HttpServlet {
 		for (Entry<String, Laptops> lt : ltmap.entrySet()) 
 		{
 			pw.print("<form name ='ProductList' action='RemoveProduct' method='post'>");
+			pw.print("<input type='hidden' name='productType' value='Laptops'>");
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+lt.getKey()+"'>");		
@@ -115,8 +118,8 @@ public class StoreManagement extends HttpServlet {
 		for (Entry<String, PetTracker> pt : ptmap.entrySet()) 
 		{
 			pw.print("<form name ='ProductList' action='RemoveProduct' method='post'>");
+			pw.print("<input type='hidden' name='productType' value='PetTracker'>");		
 			pw.print("<tr>");		
-			
 			pw.print("<input type='hidden' name='productId' value='"+pt.getKey()+"'>");		
 			pw.print("<td>"+i+".</td><td>"+pt.getValue().getName()+"</td>");	
 			pw.print("<td>"+pt.getValue().getPrice()+"</td>");	
@@ -130,6 +133,7 @@ public class StoreManagement extends HttpServlet {
 		for (Entry<String, SmartSpeaker> ss : ssmap.entrySet()) 
 		{
 			pw.print("<form name ='ProductList' action='RemoveProduct' method='post'>");
+			pw.print("<input type='hidden' name='productType' value='Smart Speaker'>");
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+ss.getKey()+"'>");		
@@ -145,6 +149,7 @@ public class StoreManagement extends HttpServlet {
 		for (Entry<String, SmartWatches> sw : swmap.entrySet()) 
 		{
 			pw.print("<form name ='ProductList' action='RemoveProduct' method='post'>");
+			pw.print("<input type='hidden' name='productType' value='Smart Watches'>");
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+sw.getKey()+"'>");		
@@ -160,6 +165,7 @@ public class StoreManagement extends HttpServlet {
 		for (Entry<String, VirtualReality> vr : vrmap.entrySet()) 
 		{
 			pw.print("<form name ='ProductList' action='RemoveProduct' method='post'>");
+			pw.print("<input type='hidden' name='productType' value='Virtual Reality'>");
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+vr.getKey()+"'>");		
@@ -175,6 +181,7 @@ public class StoreManagement extends HttpServlet {
 		for (Entry<String, Phones> p : phonemap.entrySet()) 
 		{
 			pw.print("<form name ='ProductList' action='RemoveProduct' method='post'>");
+			pw.print("<input type='hidden' name='productType' value='Phones'>");
 			pw.print("<tr>");		
 			
 			pw.print("<input type='hidden' name='productId' value='"+p.getKey()+"'>");		

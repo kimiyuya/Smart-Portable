@@ -20,7 +20,7 @@ import java.util.Random;
 @WebServlet("/Payment")
 
 public class Payment extends HttpServlet {
-		static int orderId = 10000;
+		//int orderId = 10000;
 
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -45,8 +45,8 @@ public class Payment extends HttpServlet {
 
 		if(!userAddress.isEmpty() && !creditCardNo.isEmpty() && !recipientName.isEmpty() )
 		{
-
-			orderId ++;
+			SimpleDateFormat df = new SimpleDateFormat("HHmmss");//设置日期格式
+	        int orderId = Integer.parseInt(df.format(new Date()));  //设置订单号为当前下单时间的时分秒
 			//iterate through each order
 
 			for (OrderItem oi : utility.getCustomerOrders())

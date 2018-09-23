@@ -37,7 +37,9 @@ public class AddProduct extends HttpServlet {
 		}
 		String username = utility.username();
 		utility.printHtml("Header.html");
-		
+		pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
+		pw.print("<a style='font-size: 24px;'>Product Management</a>");
+		pw.print("</h2><div class='entry'>");
 		pw.print("<form name ='AddProduct' action='AddProduct' method='post'>");
 		pw.print("<table align=\"center\" border=\"1\" width=\"500px\"><tr>");
 		
@@ -50,7 +52,8 @@ public class AddProduct extends HttpServlet {
 		pw.print("<tr><td>Product Discount:</td><td><input type ='text' name = 'productDiscount'/></td></tr>");
 		pw.print("<td><input type='reset' name='Reset' value='Reset' class='btnbuy'></td>");
 		pw.print("<td><input type='submit' name='Submit' value='Submit' class='btnbuy'></td>");
-		pw.print("</table></form>");
+		pw.print("</form></table></div></div></div>");
+		utility.printHtml("Footer.html");
 		
 		//default id = productName
 		String id = request.getParameter("productName");
